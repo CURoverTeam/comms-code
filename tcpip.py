@@ -26,6 +26,9 @@ while True:
  
             if not data:
                 break
+
+            if data == "w":
+                print("Move fowrad")
  
     finally:
         connection.close()

@@ -4,10 +4,9 @@ import sys
 # Create a connection to the server application on port 81
 tcp_socket = socket.create_connection(('localhost', 81))
  
-try:
-    data = 'Hi. I am a TCP client sending data to the server'
+while True:
+    data = input("> ")
+    if data in ["stop","quit","exit"]:
+        print("Closing socket")
+        tcp_socket.close()
     tcp_socket.sendall(bytes(data,'utf-8'))
- 
-finally:
-    print("Closing socket")
-    tcp_socket.close()
